@@ -1,7 +1,8 @@
 import pandas
-import os
 from Cliente import bababu
-from criar_conta import bububa
+from criar import bububa
+from adicionar import add
+
 
 caminho = "clientes_banco_tbj.xlsx"
 
@@ -33,33 +34,26 @@ if (menu == 1):
             print("NUMERO INVALIDO")
 
 
-
-    # try:
-    #     leitura_excel = pandas.read_excel(caminho)
-    # except:
-    #     leitura_excel = pandas.DataFrame()
-
-    #     conta = bububa(nome, cpf, tipo_conta)
-
-    #     salvar = conta.salvar_dados()
+    df = pandas.DataFrame()
 
 
-    if os.path.exists (caminho):
-        print("ebaaa")
-        leitura_excel = pandas.read_excel(caminho)
+    try:
+        df = pandas.read_excel(caminho)
 
-    else:
-        print("bah")
+        adicionar = add(nome, cpf, tipo_conta)
 
-        leitura_excel = pandas.DataFrame()
+        novo_dado = add.adicionar(df)
 
-        conta = bububa(nome, cpf, tipo_conta)
+    except:
 
-        novo_dado = conta.salvar_dados()
-        leitura_excel = pandas.concat([leitura_excel, novo_dado], ignore_index=True)
+        criar = bububa(nome, cpf, tipo_conta)
+
+        salvar = criar.salvar_dados(caminho)
 
 
-    leitura_excel.to_excel(caminho, index = 0)
+    leitura_excel = pandas.concat([df, salvar], ignore_index=True)
+
+    leitura_excel.to_excel(caminho, index = False)
 
 
 
