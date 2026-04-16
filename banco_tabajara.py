@@ -2,7 +2,7 @@ import pandas
 from Cliente import bababu
 from criar import bububa
 from adicionar import add
-
+from acessar import haeaea
 
 caminho = "clientes_banco_tbj.xlsx"
 
@@ -55,12 +55,25 @@ if (menu == 1):
 
     leitura_excel.to_excel(caminho, index = False)
 
+    print(salvar)
+
 
 
 
 
 elif (menu == 2):
-    print(":()")                                                                                                         
+
+    cpf =           int(input("cpf: "))
+    id_conta =      int(input("id conta: "))
+
+    login = haeaea(cpf, id_conta, "")
+
+    login.validar(caminho)
+    
+
+
+
+
 
 else:
     print(":/")
