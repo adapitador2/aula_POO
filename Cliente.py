@@ -1,5 +1,5 @@
 class bababu:
-    def __init__(self, nome, cpf, tipo_conta, id_conta=0, agencia=400, extrato=0):
+    def __init__(self, nome = '', cpf = 0, tipo_conta = 0, id_conta=0, agencia=400, extrato=0):
         self.id_conta = id_conta
         self.nome = nome
         self.cpf = cpf
@@ -13,5 +13,4 @@ class bababu:
 
 
     def dicionario(self):
-
         return {chave:[valor] for chave, valor in self.__dict__.items()}

@@ -13,7 +13,7 @@ menu = int(input("digite opção desejada: "))
 if (menu == 1):
 
     nome =          input("nome: ")
-    cpf =           int(input("cpf: "))
+    cpf =           str(input("cpf: "))
 
     while True:
         tipo_conta = int(input("tipo de conta: "))
@@ -40,9 +40,9 @@ if (menu == 1):
     try:
         df = pandas.read_excel(caminho)
 
-        adicionar = add(nome, cpf, tipo_conta)
+        adic = add(nome, cpf, tipo_conta)
 
-        novo_dado = add.adicionar(df)
+        salvar = adic.adicionar(df)
 
     except:
 
@@ -63,13 +63,13 @@ if (menu == 1):
 
 elif (menu == 2):
 
-    cpf =           int(input("cpf: "))
+    cpf =           str(input("cpf: "))
     id_conta =      int(input("id conta: "))
 
-    login = haeaea(cpf, id_conta, "")
+    login = haeaea(cpf, id_conta)
 
     login.validar(caminho)
-    
+
 
 
 
